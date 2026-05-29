@@ -42,206 +42,96 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
 
-/* ─── LOGIN ─── */
+/* LOGIN */
 #login-screen {
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   background: var(--bg);
   position: relative; overflow: hidden;
 }
-.login-bg-shape {
-  position: absolute; border-radius: 50%; pointer-events: none;
-}
-.login-bg-shape.s1 {
-  width: 560px; height: 560px;
-  top: -180px; right: -140px;
-  background: radial-gradient(circle at 40% 40%, rgba(26,122,80,0.07) 0%, transparent 70%);
-}
-.login-bg-shape.s2 {
-  width: 400px; height: 400px;
-  bottom: -100px; left: -80px;
-  background: radial-gradient(circle at 60% 60%, rgba(29,79,160,0.06) 0%, transparent 70%);
-}
+.login-bg-shape { position: absolute; border-radius: 50%; pointer-events: none; }
+.login-bg-shape.s1 { width: 560px; height: 560px; top: -180px; right: -140px; background: radial-gradient(circle at 40% 40%, rgba(26,122,80,0.07) 0%, transparent 70%); }
+.login-bg-shape.s2 { width: 400px; height: 400px; bottom: -100px; left: -80px; background: radial-gradient(circle at 60% 60%, rgba(29,79,160,0.06) 0%, transparent 70%); }
 .login-card {
-  background: var(--surface);
-  border-radius: 24px;
-  padding: 56px 52px;
-  width: 420px; max-width: 92vw;
-  box-shadow: var(--sh-lg);
-  border: 1px solid var(--line);
-  position: relative; z-index: 1;
+  background: var(--surface); border-radius: 24px; padding: 56px 52px;
+  width: 420px; max-width: 92vw; box-shadow: var(--sh-lg);
+  border: 1px solid var(--line); position: relative; z-index: 1;
   animation: riseIn .5s cubic-bezier(.22,.68,0,1.2);
 }
-.login-mark {
-  width: 64px; height: 64px; margin-bottom: 28px;
-}
-.login-name {
-  font-size: 32px; font-weight: 800; letter-spacing: -1.5px;
-  color: var(--ink); margin-bottom: 6px;
-}
-.login-tagline {
-  font-size: 14px; color: var(--ink3); margin-bottom: 36px;
-  font-weight: 400;
-}
-.login-rule {
-  height: 1px; background: var(--line); margin-bottom: 32px;
-}
+.login-mark { width: 64px; height: 64px; margin-bottom: 28px; }
+.login-name { font-size: 32px; font-weight: 800; letter-spacing: -1.5px; color: var(--ink); margin-bottom: 6px; }
+.login-tagline { font-size: 14px; color: var(--ink3); margin-bottom: 36px; font-weight: 400; }
+.login-rule { height: 1px; background: var(--line); margin-bottom: 32px; }
 #google-btn-wrapper { display: flex; justify-content: center; }
 
-/* ─── APP SHELL ─── */
+/* APP SHELL */
 #app { display: none; min-height: 100vh; }
 
-/* Header */
 .hdr {
-  height: 58px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
+  height: 58px; background: var(--surface); border-bottom: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 32px;
-  position: sticky; top: 0; z-index: 200;
+  padding: 0 32px; position: sticky; top: 0; z-index: 200;
 }
 .hdr-brand { display: flex; align-items: center; gap: 10px; }
 .hdr-brand-icon { width: 28px; height: 28px; }
-.hdr-brand-name {
-  font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink);
-}
+.hdr-brand-name { font-size: 17px; font-weight: 800; letter-spacing: -0.5px; color: var(--ink); }
 .hdr-right { display: flex; align-items: center; gap: 12px; }
 .hdr-avatar { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--line); object-fit: cover; }
 .hdr-uname { font-size: 13px; font-weight: 600; color: var(--ink2); }
-.btn-logout {
-  border: 1.5px solid var(--line); background: none;
-  color: var(--ink3); font-family: inherit; font-size: 12px; font-weight: 600;
-  padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: .15s;
-}
+.btn-logout { border: 1.5px solid var(--line); background: none; color: var(--ink3); font-family: inherit; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px; cursor: pointer; transition: .15s; }
 .btn-logout:hover { border-color: var(--red); color: var(--red); }
 
-/* Nav */
-.nav {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  display: flex; gap: 0; padding: 0 28px;
-  overflow-x: auto;
-}
-.nav-item {
-  display: flex; align-items: center; gap: 7px;
-  padding: 14px 16px;
-  background: none; border: none; border-bottom: 2px solid transparent;
-  font-family: inherit; font-size: 13px; font-weight: 600; color: var(--ink3);
-  cursor: pointer; transition: .15s; white-space: nowrap;
-}
+.nav { background: var(--surface); border-bottom: 1px solid var(--line); display: flex; gap: 0; padding: 0 28px; overflow-x: auto; }
+.nav-item { display: flex; align-items: center; gap: 7px; padding: 14px 16px; background: none; border: none; border-bottom: 2px solid transparent; font-family: inherit; font-size: 13px; font-weight: 600; color: var(--ink3); cursor: pointer; transition: .15s; white-space: nowrap; }
 .nav-item svg { opacity: .5; transition: .15s; }
 .nav-item.active { color: var(--ink); border-bottom-color: var(--ink); }
 .nav-item.active svg { opacity: 1; }
 .nav-item:hover:not(.active) { color: var(--ink2); }
 
-/* Main */
 .main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
 .page { display: none; }
 .page.active { display: block; animation: fadeUp .25s ease; }
 
-/* ─── TYPOGRAPHY ─── */
-.page-title {
-  font-size: 24px; font-weight: 800; letter-spacing: -1px;
-  margin-bottom: 24px; color: var(--ink);
-}
+.page-title { font-size: 24px; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; color: var(--ink); }
 .page-title em { font-style: normal; color: var(--green); }
 
-/* ─── BALANCE HERO ─── */
-.balance-hero {
-  background: var(--ink);
-  border-radius: 20px;
-  padding: 36px 40px;
-  color: white;
-  margin-bottom: 20px;
-  position: relative; overflow: hidden;
-}
-.balance-hero-grid {
-  position: absolute; inset: 0; opacity: .04;
-  background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-.balance-hero-label {
-  font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
-  text-transform: uppercase; opacity: .45; margin-bottom: 10px;
-}
-.balance-hero-amount {
-  font-size: 54px; font-weight: 900; letter-spacing: -3px; line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
+/* BALANCE HERO */
+.balance-hero { background: var(--ink); border-radius: 20px; padding: 36px 40px; color: white; margin-bottom: 20px; position: relative; overflow: hidden; }
+.balance-hero-grid { position: absolute; inset: 0; opacity: .04; background-image: linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px); background-size: 32px 32px; }
+.balance-hero-label { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; opacity: .45; margin-bottom: 10px; }
+.balance-hero-amount { font-size: 54px; font-weight: 900; letter-spacing: -3px; line-height: 1; font-variant-numeric: tabular-nums; }
 .balance-hero-cur { font-size: 28px; font-weight: 500; opacity: .5; margin-right: 4px; }
-.balance-hero-meta {
-  margin-top: 14px; font-size: 12px; opacity: .4; letter-spacing: .3px;
-}
-.balance-row {
-  display: flex; gap: 10px; margin-top: 20px; align-items: center;
-}
-.balance-input {
-  background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.15);
-  color: white; padding: 9px 14px; border-radius: 8px;
-  font-family: inherit; font-size: 15px; font-weight: 600;
-  width: 150px; outline: none; transition: border .15s;
-}
+.balance-hero-meta { margin-top: 14px; font-size: 12px; opacity: .4; letter-spacing: .3px; }
+.balance-row { display: flex; gap: 10px; margin-top: 20px; align-items: center; }
+.balance-input { background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.15); color: white; padding: 9px 14px; border-radius: 8px; font-family: inherit; font-size: 15px; font-weight: 600; width: 150px; outline: none; transition: border .15s; }
 .balance-input::placeholder { color: rgba(255,255,255,.3); }
 .balance-input:focus { border-color: rgba(255,255,255,.4); }
-.btn-set {
-  background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.18);
-  color: white; font-family: inherit; font-size: 13px; font-weight: 700;
-  padding: 9px 18px; border-radius: 8px; cursor: pointer; transition: .15s;
-  display: flex; align-items: center; gap: 6px;
-}
+.btn-set { background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.18); color: white; font-family: inherit; font-size: 13px; font-weight: 700; padding: 9px 18px; border-radius: 8px; cursor: pointer; transition: .15s; display: flex; align-items: center; gap: 6px; }
 .btn-set:hover { background: rgba(255,255,255,.2); }
 
-/* ─── STAT CARDS ─── */
+/* STAT CARDS */
 .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
-.stat {
-  background: var(--surface); border-radius: var(--r);
-  padding: 20px 22px; box-shadow: var(--sh);
-  border: 1px solid var(--line); position: relative; overflow: hidden;
-}
-.stat::after {
-  content: ''; position: absolute; left: 0; top: 16px; bottom: 16px;
-  width: 3px; border-radius: 0 2px 2px 0;
-}
+.stat { background: var(--surface); border-radius: var(--r); padding: 20px 22px; box-shadow: var(--sh); border: 1px solid var(--line); position: relative; overflow: hidden; }
+.stat::after { content: ''; position: absolute; left: 0; top: 16px; bottom: 16px; width: 3px; border-radius: 0 2px 2px 0; }
 .stat.s-green::after { background: var(--green); }
 .stat.s-red::after { background: var(--red); }
 .stat.s-amber::after { background: var(--amber); }
-.stat-lbl {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px;
-  color: var(--ink4); margin-bottom: 8px;
-}
-.stat-val {
-  font-size: 26px; font-weight: 800; letter-spacing: -1px;
-  font-variant-numeric: tabular-nums;
-}
+.stat-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: var(--ink4); margin-bottom: 8px; }
+.stat-val { font-size: 26px; font-weight: 800; letter-spacing: -1px; font-variant-numeric: tabular-nums; }
 .stat.s-green .stat-val { color: var(--green); }
 .stat.s-red .stat-val { color: var(--red); }
 .stat.s-amber .stat-val { color: var(--amber); }
 .stat-icon { position: absolute; top: 18px; left: 18px; opacity: .08; }
 
-/* ─── QUICK ADD ─── */
-.qa-card {
-  background: var(--surface); border-radius: var(--r);
-  padding: 22px 24px; box-shadow: var(--sh);
-  border: 1px solid var(--line); margin-bottom: 20px;
-}
-.qa-lbl {
-  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px;
-  color: var(--ink4); margin-bottom: 14px;
-}
+/* QUICK ADD */
+.qa-card { background: var(--surface); border-radius: var(--r); padding: 22px 24px; box-shadow: var(--sh); border: 1px solid var(--line); margin-bottom: 20px; }
+.qa-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: var(--ink4); margin-bottom: 14px; }
 .qa-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.qa-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  padding: 16px 10px; border-radius: var(--r-sm);
-  border: 1.5px solid var(--line); background: none;
-  font-family: inherit; font-size: 12px; font-weight: 700; color: var(--ink2);
-  cursor: pointer; transition: .15s;
-}
+.qa-btn { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 10px; border-radius: var(--r-sm); border: 1.5px solid var(--line); background: none; font-family: inherit; font-size: 12px; font-weight: 700; color: var(--ink2); cursor: pointer; transition: .15s; }
 .qa-btn svg { transition: .15s; }
 .qa-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
 .qa-btn.t-green:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
@@ -249,30 +139,17 @@ body {
 .qa-btn.t-blue:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-dim); }
 .qa-btn.t-amber:hover { border-color: var(--amber); color: var(--amber); background: var(--amber-dim); }
 
-/* ─── RECENT LIST ─── */
-.list-card {
-  background: var(--surface); border-radius: var(--r);
-  border: 1px solid var(--line); box-shadow: var(--sh); overflow: hidden;
-}
-.list-hdr {
-  padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid var(--line);
-}
+/* RECENT LIST */
+.list-card { background: var(--surface); border-radius: var(--r); border: 1px solid var(--line); box-shadow: var(--sh); overflow: hidden; }
+.list-hdr { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); }
 .list-hdr-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: var(--ink3); }
 .list-hdr-action { font-size: 12px; font-weight: 700; color: var(--green); cursor: pointer; }
 .list-hdr-action:hover { text-decoration: underline; }
 
-.tx-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 13px 20px; border-bottom: 1px solid var(--line);
-  transition: background .1s; position: relative;
-}
+.tx-row { display: flex; align-items: center; gap: 14px; padding: 13px 20px; border-bottom: 1px solid var(--line); transition: background .1s; position: relative; }
 .tx-row:last-child { border-bottom: none; }
 .tx-row:hover { background: var(--bg); }
-.tx-dot {
-  width: 36px; height: 36px; border-radius: 10px;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-}
+.tx-dot { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .tx-dot.d-green { background: var(--green-dim); }
 .tx-dot.d-red { background: var(--red-dim); }
 .tx-dot.d-amber { background: var(--amber-dim); }
@@ -284,57 +161,31 @@ body {
 .tx-amt.a-green { color: var(--green); }
 .tx-amt.a-red { color: var(--red); }
 .tx-amt.a-amber { color: var(--amber); }
-.tx-del {
-  background: none; border: none; cursor: pointer;
-  color: var(--ink4); padding: 4px; border-radius: 6px;
-  transition: .15s; opacity: 0; display: flex;
-}
+.tx-del { background: none; border: none; cursor: pointer; color: var(--ink4); padding: 4px; border-radius: 6px; transition: .15s; opacity: 0; display: flex; }
 .tx-row:hover .tx-del { opacity: 1; }
 .tx-del:hover { color: var(--red); background: var(--red-dim); }
 
-/* ─── EMPTY STATE ─── */
-.empty {
-  text-align: center; padding: 56px 20px;
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-}
+/* EMPTY STATE */
+.empty { text-align: center; padding: 56px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .empty svg { opacity: .2; }
 .empty-title { font-size: 14px; font-weight: 600; color: var(--ink3); }
 .empty-sub { font-size: 12px; color: var(--ink4); }
 
-/* ─── FILTER BAR ─── */
-.filter-bar {
-  display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center;
-}
-.f-chip {
-  padding: 6px 14px; border-radius: 20px;
-  border: 1.5px solid var(--line); background: var(--surface);
-  font-family: inherit; font-size: 12px; font-weight: 700; color: var(--ink3);
-  cursor: pointer; transition: .15s;
-}
+/* FILTER BAR */
+.filter-bar { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+.f-chip { padding: 6px 14px; border-radius: 20px; border: 1.5px solid var(--line); background: var(--surface); font-family: inherit; font-size: 12px; font-weight: 700; color: var(--ink3); cursor: pointer; transition: .15s; }
 .f-chip:hover { border-color: var(--ink3); color: var(--ink); }
 .f-chip.active.all { background: var(--ink); border-color: var(--ink); color: white; }
 .f-chip.active.income { background: var(--green); border-color: var(--green); color: white; }
 .f-chip.active.expense { background: var(--red); border-color: var(--red); color: white; }
 .f-chip.active.tithe { background: var(--amber); border-color: var(--amber); color: white; }
-.search-box {
-  margin-right: auto; padding: 6px 14px;
-  border: 1.5px solid var(--line); border-radius: 20px;
-  font-family: inherit; font-size: 12px; background: var(--surface);
-  color: var(--ink); outline: none; transition: border .15s; min-width: 180px;
-}
+.search-box { margin-right: auto; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 20px; font-family: inherit; font-size: 12px; background: var(--surface); color: var(--ink); outline: none; transition: border .15s; min-width: 180px; }
 .search-box:focus { border-color: var(--ink3); }
-.date-group-lbl {
-  padding: 10px 20px 4px; font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1px; color: var(--ink4);
-  background: var(--bg2); border-bottom: 1px solid var(--line);
-}
+.date-group-lbl { padding: 10px 20px 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--ink4); background: var(--bg2); border-bottom: 1px solid var(--line); }
 
-/* ─── DEBTS ─── */
+/* DEBTS */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
-.sum-card {
-  background: var(--surface); border-radius: var(--r);
-  padding: 22px; box-shadow: var(--sh); border: 1px solid var(--line); text-align: center;
-}
+.sum-card { background: var(--surface); border-radius: var(--r); padding: 22px; box-shadow: var(--sh); border: 1px solid var(--line); text-align: center; }
 .sum-card.owe { border-top: 3px solid #e8a020; }
 .sum-card.owed { border-top: 3px solid var(--blue); }
 .sum-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: var(--ink4); margin-bottom: 8px; }
@@ -342,16 +193,9 @@ body {
 .sum-card.owe .sum-val { color: #e8a020; }
 .sum-card.owed .sum-val { color: var(--blue); }
 
-.debt-row {
-  display: flex; align-items: center; gap: 14px;
-  padding: 16px 20px; border-bottom: 1px solid var(--line);
-}
+.debt-row { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
 .debt-row:last-child { border-bottom: none; }
-.debt-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px; font-weight: 800; flex-shrink: 0;
-}
+.debt-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; flex-shrink: 0; }
 .debt-avatar.owe { background: #fff3d6; color: #c07800; }
 .debt-avatar.owed { background: var(--blue-dim); color: var(--blue); }
 .debt-info { flex: 1; }
@@ -365,189 +209,92 @@ body {
 .debt-dir-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-top: 2px; }
 .debt-dir-lbl.owe { color: #c07800; }
 .debt-dir-lbl.owed { color: var(--blue); }
-.btn-settle {
-  border: 1.5px solid var(--line); background: none; color: var(--ink3);
-  padding: 5px 10px; border-radius: 6px; font-family: inherit; font-size: 11px;
-  font-weight: 700; cursor: pointer; transition: .15s; display: flex; align-items: center; gap: 4px;
-}
+.btn-settle { border: 1.5px solid var(--line); background: none; color: var(--ink3); padding: 5px 10px; border-radius: 6px; font-family: inherit; font-size: 11px; font-weight: 700; cursor: pointer; transition: .15s; display: flex; align-items: center; gap: 4px; }
 .btn-settle:hover { border-color: var(--green); color: var(--green); background: var(--green-dim); }
 
-/* ─── TITHE PAGE ─── */
-.tithe-hero {
-  background: linear-gradient(135deg, #4a3200 0%, #8a6300 100%);
-  border-radius: 20px; padding: 36px 40px; color: white; margin-bottom: 20px;
-  position: relative; overflow: hidden;
-}
-.tithe-hero-bg { position: absolute; inset: 0; opacity: .04;
-  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.5) 0, rgba(255,255,255,.5) 1px, transparent 0, transparent 50%);
-  background-size: 20px 20px;
-}
+/* TITHE PAGE */
+.tithe-hero { background: linear-gradient(135deg, #4a3200 0%, #8a6300 100%); border-radius: 20px; padding: 36px 40px; color: white; margin-bottom: 20px; position: relative; overflow: hidden; }
+.tithe-hero-bg { position: absolute; inset: 0; opacity: .04; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.5) 0, rgba(255,255,255,.5) 1px, transparent 0, transparent 50%); background-size: 20px 20px; }
 .tithe-hero-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; opacity: .5; margin-bottom: 10px; }
 .tithe-hero-amt { font-size: 54px; font-weight: 900; letter-spacing: -3px; line-height: 1; font-variant-numeric: tabular-nums; }
 .tithe-hero-sub { margin-top: 10px; font-size: 13px; opacity: .6; }
 .tithe-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
-.tithe-stat {
-  background: var(--surface); border-radius: var(--r);
-  padding: 20px 22px; border: 1px solid var(--line); box-shadow: var(--sh); text-align: center;
-}
+.tithe-stat { background: var(--surface); border-radius: var(--r); padding: 20px 22px; border: 1px solid var(--line); box-shadow: var(--sh); text-align: center; }
 .ts-lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .9px; color: var(--ink4); margin-bottom: 6px; }
 .ts-val { font-size: 24px; font-weight: 800; letter-spacing: -1px; color: var(--amber); font-variant-numeric: tabular-nums; }
 .add-btn-row { margin-bottom: 16px; }
-.btn-add-outline {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
-  padding: 9px 18px; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 700;
-  cursor: pointer; transition: .15s; box-shadow: var(--sh);
-}
+.btn-add-outline { display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); padding: 9px 18px; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: .15s; box-shadow: var(--sh); }
 .btn-add-outline:hover { border-color: var(--ink3); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
 
-/* ─── AI PAGE ─── */
-.ai-shell {
-  background: #0c1118;
-  border-radius: 20px; overflow: hidden;
-  border: 1px solid #1e2530;
-  box-shadow: 0 8px 40px rgba(0,0,0,.2);
-}
-.ai-shell-hdr {
-  padding: 18px 24px; border-bottom: 1px solid #1e2530;
-  display: flex; align-items: center; gap: 12px;
-}
+/* AI PAGE */
+.ai-shell { background: #0c1118; border-radius: 20px; overflow: hidden; border: 1px solid #1e2530; box-shadow: 0 8px 40px rgba(0,0,0,.2); }
+.ai-shell-hdr { padding: 18px 24px; border-bottom: 1px solid #1e2530; display: flex; align-items: center; gap: 12px; }
 .ai-status-dot { width: 8px; height: 8px; border-radius: 50%; background: #22c77a; animation: blink 2.4s ease infinite; }
 .ai-title { font-size: 14px; font-weight: 700; color: #e8edf2; }
 .ai-sub { font-size: 11px; color: #4a5568; margin-top: 1px; }
 .ai-quick { display: flex; gap: 8px; flex-wrap: wrap; padding: 16px 24px; border-bottom: 1px solid #1e2530; }
-.ai-qbtn {
-  background: #141c24; border: 1px solid #2a3444; color: #7a8fa6;
-  padding: 6px 12px; border-radius: 6px; font-family: inherit; font-size: 11px; font-weight: 600;
-  cursor: pointer; transition: .15s;
-}
+.ai-qbtn { background: #141c24; border: 1px solid #2a3444; color: #7a8fa6; padding: 6px 12px; border-radius: 6px; font-family: inherit; font-size: 11px; font-weight: 600; cursor: pointer; transition: .15s; }
 .ai-qbtn:hover { background: #1e2d3d; border-color: #3a5a7a; color: #a8c0d6; }
-.ai-messages {
-  min-height: 200px; max-height: 360px; overflow-y: auto;
-  padding: 20px 24px; display: flex; flex-direction: column; gap: 14px;
-}
+.ai-messages { min-height: 200px; max-height: 360px; overflow-y: auto; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px; }
 .ai-msg { max-width: 88%; padding: 12px 16px; border-radius: 12px; font-size: 13px; line-height: 1.65; }
 .ai-msg.bot { background: #141c24; color: #9ab0c8; border: 1px solid #1e2d3d; align-self: flex-start; border-radius: 4px 12px 12px 12px; }
 .ai-msg.user { background: #1a3a5c; color: #c8dff0; align-self: flex-end; border-radius: 12px 4px 12px 12px; }
 .ai-msg.thinking { color: #3a5a7a; font-style: italic; }
-.ai-input-row {
-  display: flex; gap: 10px; padding: 16px 24px;
-  border-top: 1px solid #1e2530; background: #0c1118;
-}
-.ai-input {
-  flex: 1; background: #141c24; border: 1.5px solid #2a3444; color: #c8dff0;
-  padding: 10px 16px; border-radius: 8px; font-family: inherit; font-size: 13px;
-  outline: none; transition: border .15s;
-}
+.ai-input-row { display: flex; gap: 10px; padding: 16px 24px; border-top: 1px solid #1e2530; background: #0c1118; }
+.ai-input { flex: 1; background: #141c24; border: 1.5px solid #2a3444; color: #c8dff0; padding: 10px 16px; border-radius: 8px; font-family: inherit; font-size: 13px; outline: none; transition: border .15s; }
 .ai-input::placeholder { color: #2a3a4a; }
 .ai-input:focus { border-color: #3a5a7a; }
-.ai-send-btn {
-  background: #1d4fa0; border: none; color: white;
-  padding: 10px 18px; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 700;
-  cursor: pointer; transition: .15s; display: flex; align-items: center; gap: 6px;
-}
+.ai-send-btn { background: #1d4fa0; border: none; color: white; padding: 10px 18px; border-radius: 8px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; transition: .15s; display: flex; align-items: center; gap: 6px; }
 .ai-send-btn:hover { background: #2860bf; }
 
-/* ─── MODAL ─── */
-.overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(10,10,10,.45); backdrop-filter: blur(6px);
-  z-index: 1000; align-items: center; justify-content: center;
-}
+/* API KEY SETUP */
+.api-key-banner { background: #141c24; border: 1px solid #2a3444; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.api-key-banner input { flex: 1; background: #0c1118; border: 1.5px solid #2a3444; color: #c8dff0; padding: 8px 12px; border-radius: 6px; font-family: inherit; font-size: 13px; outline: none; }
+.api-key-banner input:focus { border-color: #3a5a7a; }
+.api-key-banner input::placeholder { color: #2a3a4a; }
+.btn-save-key { background: #1d4fa0; border: none; color: white; padding: 8px 14px; border-radius: 6px; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.btn-save-key:hover { background: #2860bf; }
+.key-label { font-size: 11px; color: #4a5568; white-space: nowrap; }
+
+/* MODAL */
+.overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,.45); backdrop-filter: blur(6px); z-index: 1000; align-items: center; justify-content: center; }
 .overlay.open { display: flex; }
-.modal {
-  background: var(--surface); border-radius: 20px;
-  padding: 36px; width: 460px; max-width: 94vw;
-  box-shadow: var(--sh-lg); border: 1px solid var(--line);
-  position: relative; animation: riseIn .2s ease;
-}
-.modal-close {
-  position: absolute; top: 16px; left: 16px;
-  width: 30px; height: 30px; border-radius: 50%;
-  background: var(--bg); border: none; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--ink3); transition: .15s;
-}
+.modal { background: var(--surface); border-radius: 20px; padding: 36px; width: 460px; max-width: 94vw; box-shadow: var(--sh-lg); border: 1px solid var(--line); position: relative; animation: riseIn .2s ease; }
+.modal-close { position: absolute; top: 16px; left: 16px; width: 30px; height: 30px; border-radius: 50%; background: var(--bg); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--ink3); transition: .15s; }
 .modal-close:hover { background: var(--line); }
 .modal-title { font-size: 20px; font-weight: 800; letter-spacing: -.5px; margin-bottom: 4px; }
 .modal-sub { font-size: 13px; color: var(--ink3); margin-bottom: 24px; }
 .type-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
-.tab {
-  flex: 1; padding: 10px; border-radius: var(--r-sm);
-  border: 1.5px solid var(--line); background: none;
-  font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; transition: .15s;
-  color: var(--ink3); display: flex; align-items: center; justify-content: center; gap: 6px;
-}
+.tab { flex: 1; padding: 10px; border-radius: var(--r-sm); border: 1.5px solid var(--line); background: none; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; transition: .15s; color: var(--ink3); display: flex; align-items: center; justify-content: center; gap: 6px; }
 .tab.sel.t-green { background: var(--green-dim); border-color: var(--green); color: var(--green); }
 .tab.sel.t-red { background: var(--red-dim); border-color: var(--red); color: var(--red); }
 .fgrp { margin-bottom: 16px; }
 .flbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--ink3); margin-bottom: 6px; display: block; }
-.finput, .fselect {
-  width: 100%; padding: 11px 14px; border: 1.5px solid var(--line);
-  border-radius: var(--r-sm); font-family: inherit; font-size: 14px;
-  color: var(--ink); background: var(--surface); outline: none; transition: border .15s;
-}
+.finput, .fselect { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: var(--r-sm); font-family: inherit; font-size: 14px; color: var(--ink); background: var(--surface); outline: none; transition: border .15s; }
 .finput:focus, .fselect:focus { border-color: var(--ink3); }
 .debt-dir-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
-.dir-tab {
-  flex: 1; padding: 10px; border: 1.5px solid var(--line); border-radius: var(--r-sm);
-  background: none; font-family: inherit; font-size: 12px; font-weight: 700;
-  cursor: pointer; transition: .15s; color: var(--ink3); display: flex; align-items: center; justify-content: center; gap: 6px;
-}
+.dir-tab { flex: 1; padding: 10px; border: 1.5px solid var(--line); border-radius: var(--r-sm); background: none; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer; transition: .15s; color: var(--ink3); display: flex; align-items: center; justify-content: center; gap: 6px; }
 .dir-tab.sel.owe { background: #fff3d6; border-color: #e8a020; color: #c07800; }
 .dir-tab.sel.owed { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
-.tithe-hint {
-  background: var(--amber-dim); border: 1px solid #e8d070;
-  border-radius: var(--r-sm); padding: 10px 14px;
-  font-size: 12px; color: var(--amber); margin-bottom: 16px; display: none;
-  font-weight: 600;
-}
+.tithe-hint { background: var(--amber-dim); border: 1px solid #e8d070; border-radius: var(--r-sm); padding: 10px 14px; font-size: 12px; color: var(--amber); margin-bottom: 16px; display: none; font-weight: 600; }
 .tithe-hint.show { display: flex; align-items: center; gap: 8px; }
-.btn-primary {
-  width: 100%; padding: 13px; border-radius: var(--r-sm);
-  background: var(--ink); border: none; color: white;
-  font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer;
-  transition: .15s; letter-spacing: -.3px; display: flex; align-items: center; justify-content: center; gap: 8px;
-  margin-top: 4px;
-}
+.btn-primary { width: 100%; padding: 13px; border-radius: var(--r-sm); background: var(--ink); border: none; color: white; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; transition: .15s; letter-spacing: -.3px; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
 .btn-primary:hover { background: #2a2a2a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,.15); }
 
-/* ─── FAB ─── */
-.fab {
-  position: fixed; bottom: 28px; left: 28px; z-index: 99;
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--ink); border: none; color: white;
-  box-shadow: 0 4px 20px rgba(0,0,0,.25);
-  cursor: pointer; transition: .2s; display: none; align-items: center; justify-content: center;
-}
+/* FAB */
+.fab { position: fixed; bottom: 28px; left: 28px; z-index: 99; width: 52px; height: 52px; border-radius: 50%; background: var(--ink); border: none; color: white; box-shadow: 0 4px 20px rgba(0,0,0,.25); cursor: pointer; transition: .2s; display: none; align-items: center; justify-content: center; }
 .fab:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(0,0,0,.3); }
 
-/* ─── TOAST ─── */
-.toast {
-  position: fixed; bottom: 20px; right: 24px; z-index: 9999;
-  background: var(--ink); color: white;
-  padding: 12px 18px; border-radius: 10px;
-  font-size: 13px; font-weight: 600; letter-spacing: -.1px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.18);
-  display: flex; align-items: center; gap: 8px;
-  pointer-events: none; animation: fadeUp .25s ease;
-}
+/* TOAST */
+.toast { position: fixed; bottom: 20px; right: 24px; z-index: 9999; background: var(--ink); color: white; padding: 12px 18px; border-radius: 10px; font-size: 13px; font-weight: 600; letter-spacing: -.1px; box-shadow: 0 6px 24px rgba(0,0,0,.18); display: flex; align-items: center; gap: 8px; pointer-events: none; animation: fadeUp .25s ease; }
 .toast.hidden { display: none; }
 
-/* ─── ANIMATIONS ─── */
-@keyframes riseIn {
-  from { opacity: 0; transform: translateY(12px) scale(.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; } 50% { opacity: .3; }
-}
+/* ANIMATIONS */
+@keyframes riseIn { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .stats-row { grid-template-columns: 1fr 1fr; }
   .qa-grid { grid-template-columns: 1fr 1fr; }
@@ -564,7 +311,7 @@ body {
 </head>
 <body>
 
-<!-- ═══ LOGIN ═══ -->
+<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-bg-shape s1"></div>
   <div class="login-bg-shape s2"></div>
@@ -583,10 +330,9 @@ body {
   </div>
 </div>
 
-<!-- ═══ APP ═══ -->
+<!-- APP -->
 <div id="app">
 
-  <!-- Header -->
   <header class="hdr">
     <div class="hdr-brand">
       <svg class="hdr-brand-icon" viewBox="0 0 28 28" fill="none">
@@ -604,7 +350,6 @@ body {
     </div>
   </header>
 
-  <!-- Nav -->
   <nav class="nav">
     <button class="nav-item active" onclick="showPage('dashboard',this)">
       <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor"/></svg>
@@ -630,7 +375,7 @@ body {
 
   <main class="main">
 
-    <!-- ── DASHBOARD ── -->
+    <!-- DASHBOARD -->
     <div id="page-dashboard" class="page active">
       <div class="balance-hero">
         <div class="balance-hero-grid"></div>
@@ -652,23 +397,17 @@ body {
         <div class="stat s-green">
           <div class="stat-lbl">הכנסות</div>
           <div class="stat-val" id="s-income">₪0</div>
-          <div class="stat-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 6v24M9 15l9-9 9 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="stat-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 6v24M9 15l9-9 9 9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
         <div class="stat s-red">
           <div class="stat-lbl">הוצאות</div>
           <div class="stat-val" id="s-expense">₪0</div>
-          <div class="stat-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 30V6M9 21l9 9 9-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="stat-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 30V6M9 21l9 9 9-9" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         </div>
         <div class="stat s-amber">
           <div class="stat-lbl">מעשרות לתשלום</div>
           <div class="stat-val" id="s-tithe">₪0</div>
-          <div class="stat-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 3l3.5 10.5H32l-9 6.5L26.5 31 18 24.5 9.5 31 13 20 4 13.5h10.5L18 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="stat-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 3l3.5 10.5H32l-9 6.5L26.5 31 18 24.5 9.5 31 13 20 4 13.5h10.5L18 3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
         </div>
       </div>
 
@@ -705,7 +444,7 @@ body {
       </div>
     </div>
 
-    <!-- ── TRANSACTIONS ── -->
+    <!-- TRANSACTIONS -->
     <div id="page-transactions" class="page">
       <div class="page-title">כל <em>התנועות</em></div>
       <div class="filter-bar">
@@ -720,7 +459,7 @@ body {
       </div>
     </div>
 
-    <!-- ── DEBTS ── -->
+    <!-- DEBTS -->
     <div id="page-debts" class="page">
       <div class="page-title">ניהול <em>חובות</em></div>
       <div class="two-col">
@@ -738,7 +477,7 @@ body {
       </div>
     </div>
 
-    <!-- ── TITHE ── -->
+    <!-- TITHE -->
     <div id="page-tithe" class="page">
       <div class="page-title">מעשרות ו<em>צדקה</em></div>
       <div class="tithe-hero">
@@ -750,7 +489,7 @@ body {
       <div class="tithe-3col">
         <div class="tithe-stat"><div class="ts-lbl">בסיס הכנסות</div><div class="ts-val" id="t-base">₪0</div></div>
         <div class="tithe-stat"><div class="ts-lbl">שולם</div><div class="ts-val" id="t-paid">₪0</div></div>
-        <div class="tithe-stat"><div class="ts-lbl">נותר</div><div class="ts-val" id="t-rem">₪0</div></div>
+        <div class="tithe-stat"><div class="ts-lbl">נותר לתשלום</div><div class="ts-val" id="t-rem">₪0</div></div>
       </div>
       <div class="add-btn-row">
         <button class="btn-add-outline" onclick="openModal('tithe')">
@@ -763,7 +502,7 @@ body {
       </div>
     </div>
 
-    <!-- ── AI ── -->
+    <!-- AI -->
     <div id="page-ai" class="page">
       <div class="page-title">עוזר <em>AI</em></div>
       <div class="ai-shell">
@@ -774,6 +513,11 @@ body {
             <div class="ai-sub">מנתח את הנתונים שלך בזמן אמת</div>
           </div>
         </div>
+        <div class="api-key-banner">
+          <span class="key-label">מפתח Anthropic API:</span>
+          <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off">
+          <button class="btn-save-key" onclick="saveApiKey()">שמור</button>
+        </div>
         <div class="ai-quick">
           <button class="ai-qbtn" onclick="askAI('מה המצב הכלכלי שלי?')">מה המצב שלי?</button>
           <button class="ai-qbtn" onclick="askAI('כמה מעשרות אני חייב?')">מעשרות שחייב</button>
@@ -782,7 +526,7 @@ body {
           <button class="ai-qbtn" onclick="askAI('תן לי טיפים לחסכון לפי הנתונים שלי')">טיפים לחסכון</button>
         </div>
         <div class="ai-messages" id="ai-chat">
-          <div class="ai-msg bot">שלום. אני העוזר החכם שלך לניהול הארנק. אשמח לנתח את ההכנסות, ההוצאות, החובות והמעשרות שלך ולסייע בכל שאלה פיננסית.</div>
+          <div class="ai-msg bot">שלום. אני העוזר החכם שלך לניהול הארנק. הזן מפתח Anthropic API כדי להפעיל אותי, ואשמח לנתח את ההכנסות, ההוצאות, החובות והמעשרות שלך.</div>
         </div>
         <div class="ai-input-row">
           <input type="text" class="ai-input" id="ai-input" placeholder="שאל שאלה על הכספים שלך..." onkeydown="if(event.key==='Enter')sendAI()">
@@ -879,6 +623,9 @@ body {
 
 <script>
 // ═══ STATE ═══
+// S.balance = יתרה נוכחית (מחושבת)
+// כל הוצאה, מעשר ששולם, וחוב שסולק מורידים מהיתרה
+// הכנסה מעלה את היתרה
 let S = { balance: 0, initBal: 0, txs: [], debts: [], user: null };
 let modalType = 'income', debtDir = 'owe', txFilter = 'all', txSearch = '';
 
@@ -894,9 +641,14 @@ function load(){ try{ const d=localStorage.getItem('_arnaq'); if(d) S=Object.ass
 // ═══ AUTH ═══
 window.onload = () => {
   if(typeof google !== 'undefined') initGsign();
-  else document.querySelector('script[src*="gsi"]').addEventListener('load', initGsign);
+  else {
+    const s = document.querySelector('script[src*="gsi"]');
+    if(s) s.addEventListener('load', initGsign);
+    else initGsign();
+  }
 };
 function initGsign(){
+  if(typeof google === 'undefined') return;
   google.accounts.id.initialize({
     client_id:'426523025549-2e61ouhd3ef45qr79f6gp29a7pd9aqve.apps.googleusercontent.com',
     callback: onGoogleLogin
@@ -921,7 +673,11 @@ function boot(u){
   const fab = document.getElementById('fab'); fab.style.display = 'flex';
   document.getElementById('user-name').textContent = u.name.split(' ')[0];
   document.getElementById('user-avatar').src = u.pic;
-  load(); recalc(); renderAll();
+  load();
+  // טען מפתח API שמור
+  const savedKey = localStorage.getItem('_apikey');
+  if(savedKey) document.getElementById('api-key-input').value = savedKey;
+  recalc(); renderAll();
 }
 function logout(){ localStorage.removeItem('_user'); location.reload(); }
 function parseJwt(t){ try{ return JSON.parse(atob(t.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))); }catch(e){ return {}; } }
@@ -958,13 +714,13 @@ function openModal(t){
     selDir('owe');
   } else if(t==='tithe'){
     document.getElementById('m-title').textContent='תשלום מעשר';
-    document.getElementById('m-sub').textContent='רשום תשלום מעשר או צדקה';
+    document.getElementById('m-sub').textContent='רשום תשלום מעשר או צדקה — מורד מהיתרה';
     document.getElementById('type-tabs').style.display='none';
     document.getElementById('amt-lbl').textContent='סכום ששולם (₪)';
     fillCats('tithe');
   } else {
     document.getElementById('m-title').textContent = t==='income'?'הוספת הכנסה':'הוספת הוצאה';
-    document.getElementById('m-sub').textContent = t==='income'?'כסף שנכנס לארנק':'כסף שיצא מהארנק';
+    document.getElementById('m-sub').textContent = t==='income'?'כסף שנכנס לארנק':'כסף שיצא מהארנק — מורד מהיתרה';
     document.getElementById('amt-lbl').textContent='סכום (₪)';
     fillCats(t);
     selType(t);
@@ -995,7 +751,7 @@ function calcTithe(){
   document.getElementById('tithe-amt').textContent=(a*.1).toFixed(2);
 }
 
-// ═══ ADD ═══
+// ═══ ADD TRANSACTION ═══
 function addTx(){
   const amt=parseFloat(document.getElementById('m-amount').value);
   if(!amt||amt<=0){ toast('הזן סכום תקין'); return; }
@@ -1006,27 +762,61 @@ function addTx(){
   if(modalType==='debt'){
     const person=document.getElementById('debt-person').value.trim();
     if(!person){ toast('הזן שם'); return; }
+    // חוב עצמו לא משנה יתרה — רק סליקה שלו תשנה
     S.debts.push({id:Date.now(), person, amt, desc, date, dir:debtDir, settled:false});
     toast('חוב נרשם');
+
   } else if(modalType==='tithe'){
+    // תשלום מעשר — מוריד מהיתרה
     S.txs.push({id:Date.now(), type:'tithe', amt, desc, date, cat});
-    toast('מעשר נרשם');
+    toast('מעשר נרשם — יתרה עודכנה');
+
+  } else if(modalType==='income'){
+    // הכנסה — מעלה יתרה; מחשב מעשר עתידי (tithe_p = pending)
+    const id = Date.now();
+    S.txs.push({id, type:'income', amt, desc, date, cat});
+    S.txs.push({id:id+1, type:'tithe_p', amt:amt*.1, desc:'מעשר שנצבר', date, src:id});
+    toast('הכנסה נוספה');
+
   } else {
-    S.txs.push({id:Date.now(), type:modalType, amt, desc, date, cat});
-    if(modalType==='income'){
-      S.txs.push({id:Date.now()+1, type:'tithe_p', amt:amt*.1, desc:'מעשר אוטו', date, src:Date.now()});
-      toast('הכנסה נוספה');
-    } else toast('הוצאה נרשמה');
+    // הוצאה — מוריד מהיתרה
+    S.txs.push({id:Date.now(), type:'expense', amt, desc, date, cat});
+    toast('הוצאה נרשמה — יתרה עודכנה');
   }
+
   save(); closeModal(); recalc(); renderAll();
 }
+
+// ═══ DELETE ═══
 function delTx(id){
   const t=S.txs.find(x=>x.id===id); if(!t) return;
+  // אם מוחקים הכנסה — מחק גם את ה-tithe_p שלה
   if(t.type==='income') S.txs=S.txs.filter(x=>x.src!==id);
   S.txs=S.txs.filter(x=>x.id!==id);
   save(); recalc(); renderAll(); toast('נמחק');
 }
-function settleDebt(id){ const d=S.debts.find(x=>x.id===id); if(d){d.settled=true; save(); renderDebtList(); toast('חוב סולק');} }
+
+// ═══ SETTLE DEBT ═══
+// סליקת חוב: אם אני חייב — מוריד מהיתרה; אם חייבים לי — מעלה יתרה
+function settleDebt(id){
+  const d=S.debts.find(x=>x.id===id);
+  if(!d) return;
+  d.settled=true;
+  d.settledDate=today();
+  // הוסף תנועת יתרה מתאימה
+  if(d.dir==='owe'){
+    // שילמתי — יורד מהיתרה
+    S.txs.push({id:Date.now(), type:'expense', amt:d.amt, desc:'פריעת חוב ל-'+d.person, date:today(), cat:'חוב', debtRef:id});
+    toast('חוב סולק — ₪'+fmt(d.amt)+' הורדו מהיתרה');
+  } else {
+    // קיבלתי — עולה ליתרה
+    S.txs.push({id:Date.now(), type:'income', amt:d.amt, desc:'קבלת חוב מ-'+d.person, date:today(), cat:'החזר', debtRef:id});
+    // אל תחשב מעשר על החזר חוב
+    toast('חוב סולק — ₪'+fmt(d.amt)+' נוספו ליתרה');
+  }
+  save(); recalc(); renderAll();
+}
+
 function delDebt(id){ S.debts=S.debts.filter(x=>x.id!==id); save(); renderDebtList(); toast('נמחק'); }
 
 function setInitialBalance(){
@@ -1036,32 +826,49 @@ function setInitialBalance(){
 }
 
 // ═══ RECALC ═══
+// יתרה = יתרה התחלתית + הכנסות − הוצאות − מעשרות ששולמו
+// (חובות שסוולקו כבר נוצרו כ-expense/income ולכן נכללים)
 function recalc(){
-  let b=S.initBal;
-  S.txs.forEach(t=>{ if(t.type==='income') b+=t.amt; if(t.type==='expense') b-=t.amt; });
-  S.balance=b;
+  let b = S.initBal;
+  S.txs.forEach(t=>{
+    if(t.type==='income')  b += t.amt;
+    if(t.type==='expense') b -= t.amt;
+    if(t.type==='tithe')   b -= t.amt; // תשלום מעשר מוריד יתרה
+    // tithe_p לא משפיע על יתרה — זה רק מעקב
+  });
+  S.balance = b;
 }
 
 // ═══ RENDER ═══
 function renderAll(){ renderDash(); renderTxList(); renderDebtList(); renderTitheList(); }
 
 function renderDash(){
-  const inc=sum('income'), exp=sum('expense'), titheP=sum('tithe_p'), titheD=sum('tithe');
-  document.getElementById('bal-display').textContent=fmt(S.balance);
-  document.getElementById('bal-meta').textContent=`יתרה התחלתית: ₪${fmt(S.initBal)}`;
-  document.getElementById('balance-input').value=S.initBal||'';
-  document.getElementById('s-income').textContent='₪'+fmt(inc);
-  document.getElementById('s-expense').textContent='₪'+fmt(exp);
-  document.getElementById('s-tithe').textContent='₪'+fmt(Math.max(0,titheP-titheD));
+  const inc  = sum('income');
+  const exp  = sum('expense');
+  const titheAccrued = inc * 0.1; // 10% מהכנסות
+  const tithePaid    = sum('tithe'); // מה ששולם בפועל
+  const titheRem     = Math.max(0, titheAccrued - tithePaid);
 
-  const recent=S.txs.filter(t=>t.type!=='tithe_p').slice(-6).reverse();
-  const el=document.getElementById('recent-list');
-  el.innerHTML=recent.length ? recent.map(txHTML).join('') : emptyHTML('אין תנועות','הוסף הכנסה או הוצאה');
+  document.getElementById('bal-display').textContent = fmt(S.balance);
+  document.getElementById('bal-meta').textContent = `יתרה התחלתית: ₪${fmt(S.initBal)}`;
+  document.getElementById('balance-input').value = S.initBal || '';
+  document.getElementById('s-income').textContent  = '₪'+fmt(inc);
+  document.getElementById('s-expense').textContent = '₪'+fmt(exp);
+  document.getElementById('s-tithe').textContent   = '₪'+fmt(titheRem);
+
+  // תנועות אחרונות — לא כולל tithe_p
+  const recent = S.txs.filter(t=>t.type!=='tithe_p').slice(-6).reverse();
+  const el = document.getElementById('recent-list');
+  el.innerHTML = recent.length ? recent.map(txHTML).join('') : emptyHTML('אין תנועות','הוסף הכנסה או הוצאה');
 }
 
 function txHTML(t){
-  const map={income:{cls:'d-green',sign:'+',acls:'a-green',icon:arrowUp('#1a7a50')},expense:{cls:'d-red',sign:'-',acls:'a-red',icon:arrowDown('#c0392b')},tithe:{cls:'d-amber',sign:'-',acls:'a-amber',icon:starSvg('#8a6300')}};
-  const m=map[t.type]||map.expense;
+  const map={
+    income:  {cls:'d-green', sign:'+', acls:'a-green', icon:arrowUp('#1a7a50')},
+    expense: {cls:'d-red',   sign:'-', acls:'a-red',   icon:arrowDown('#c0392b')},
+    tithe:   {cls:'d-amber', sign:'-', acls:'a-amber',  icon:starSvg('#8a6300')}
+  };
+  const m = map[t.type] || map.expense;
   return `<div class="tx-row">
     <div class="tx-dot ${m.cls}">${m.icon}</div>
     <div class="tx-body">
@@ -1074,10 +881,13 @@ function txHTML(t){
 }
 
 function renderTxList(){
-  const all=S.txs.filter(t=>{
+  const all = S.txs.filter(t=>{
     if(t.type==='tithe_p') return false;
-    if(txFilter!=='all'&&t.type!==txFilter) return false;
-    if(txSearch){ const q=txSearch.toLowerCase(); return (t.cat||'').toLowerCase().includes(q)||(t.desc||'').toLowerCase().includes(q); }
+    if(txFilter!=='all' && t.type!==txFilter) return false;
+    if(txSearch){
+      const q=txSearch.toLowerCase();
+      return (t.cat||'').toLowerCase().includes(q)||(t.desc||'').toLowerCase().includes(q);
+    }
     return true;
   }).sort((a,b)=>new Date(b.date)-new Date(a.date));
 
@@ -1089,38 +899,64 @@ function renderTxList(){
 }
 
 function renderDebtList(){
-  const active=S.debts.filter(d=>!d.settled);
-  const owe=active.filter(d=>d.dir==='owe').reduce((s,d)=>s+d.amt,0);
-  const owed=active.filter(d=>d.dir==='owed').reduce((s,d)=>s+d.amt,0);
-  document.getElementById('d-owe').textContent='₪'+fmt(owe);
-  document.getElementById('d-owed').textContent='₪'+fmt(owed);
+  const active = S.debts.filter(d=>!d.settled);
+  const settled = S.debts.filter(d=>d.settled);
+  const owe  = active.filter(d=>d.dir==='owe').reduce((s,d)=>s+d.amt,0);
+  const owed = active.filter(d=>d.dir==='owed').reduce((s,d)=>s+d.amt,0);
+  document.getElementById('d-owe').textContent  = '₪'+fmt(owe);
+  document.getElementById('d-owed').textContent = '₪'+fmt(owed);
+
   const el=document.getElementById('debt-list');
-  if(!active.length){ el.innerHTML=emptyHTML('אין חובות פעילים'); return; }
-  el.innerHTML=[...active].reverse().map(d=>`<div class="debt-row">
-    <div class="debt-avatar ${d.dir}">${d.person.charAt(0).toUpperCase()}</div>
-    <div class="debt-info">
-      <div class="debt-name">${d.person}</div>
-      <div class="debt-desc">${d.desc||''}</div>
-      <div class="debt-date">${fmtDate(d.date)}</div>
-    </div>
-    <div class="debt-right">
-      <div class="debt-amt ${d.dir}">₪${fmt(d.amt)}</div>
-      <div class="debt-dir-lbl ${d.dir}">${d.dir==='owe'?'אני חייב':'חייב לי'}</div>
-    </div>
-    <button class="btn-settle" onclick="settleDebt(${d.id})">${checkSvg()} סולק</button>
-    <button class="tx-del" style="opacity:1" onclick="delDebt(${d.id})">${trashSvg()}</button>
-  </div>`).join('');
+  if(!active.length && !settled.length){ el.innerHTML=emptyHTML('אין חובות פעילים'); return; }
+
+  let html = '';
+  if(active.length){
+    html += [...active].reverse().map(d=>`<div class="debt-row">
+      <div class="debt-avatar ${d.dir}">${d.person.charAt(0).toUpperCase()}</div>
+      <div class="debt-info">
+        <div class="debt-name">${d.person}</div>
+        <div class="debt-desc">${d.desc||''}</div>
+        <div class="debt-date">${fmtDate(d.date)}</div>
+      </div>
+      <div class="debt-right">
+        <div class="debt-amt ${d.dir}">₪${fmt(d.amt)}</div>
+        <div class="debt-dir-lbl ${d.dir}">${d.dir==='owe'?'אני חייב':'חייב לי'}</div>
+      </div>
+      <button class="btn-settle" onclick="settleDebt(${d.id})">${checkSvg()} סולק</button>
+      <button class="tx-del" style="opacity:1" onclick="delDebt(${d.id})">${trashSvg()}</button>
+    </div>`).join('');
+  }
+  if(settled.length){
+    html += `<div class="date-group-lbl">סולקו</div>`;
+    html += [...settled].reverse().map(d=>`<div class="debt-row" style="opacity:.45">
+      <div class="debt-avatar ${d.dir}" style="text-decoration:line-through">${d.person.charAt(0).toUpperCase()}</div>
+      <div class="debt-info">
+        <div class="debt-name" style="text-decoration:line-through">${d.person}</div>
+        <div class="debt-desc">${d.desc||''} · סולק ${fmtDate(d.settledDate||d.date)}</div>
+      </div>
+      <div class="debt-right">
+        <div class="debt-amt ${d.dir}" style="text-decoration:line-through">₪${fmt(d.amt)}</div>
+      </div>
+      <button class="tx-del" style="opacity:1" onclick="delDebt(${d.id})">${trashSvg()}</button>
+    </div>`).join('');
+  }
+  el.innerHTML = html;
 }
 
 function renderTitheList(){
-  const inc=sum('income'), titheCalc=inc*.1, paid=sum('tithe'), rem=Math.max(0,titheCalc-paid);
-  document.getElementById('tithe-total-h').textContent=fmt(titheCalc);
-  document.getElementById('t-base').textContent='₪'+fmt(inc);
-  document.getElementById('t-paid').textContent='₪'+fmt(paid);
-  document.getElementById('t-rem').textContent='₪'+fmt(rem);
-  const all=S.txs.filter(t=>t.type==='tithe').sort((a,b)=>new Date(b.date)-new Date(a.date));
-  const el=document.getElementById('tithe-list');
-  el.innerHTML=all.length ? all.map(t=>`<div class="tx-row">
+  const inc       = sum('income');
+  const titheCalc = inc * 0.1;
+  const paid      = sum('tithe');
+  const rem       = Math.max(0, titheCalc - paid);
+
+  document.getElementById('tithe-total-h').textContent = fmt(titheCalc);
+  document.getElementById('t-base').textContent = '₪'+fmt(inc);
+  document.getElementById('t-paid').textContent = '₪'+fmt(paid);
+  document.getElementById('t-rem').textContent  = '₪'+fmt(rem);
+
+  const all = S.txs.filter(t=>t.type==='tithe').sort((a,b)=>new Date(b.date)-new Date(a.date));
+  const el  = document.getElementById('tithe-list');
+  el.innerHTML = all.length ? all.map(t=>`<div class="tx-row">
     <div class="tx-dot d-amber">${starSvg('#8a6300')}</div>
     <div class="tx-body">
       <div class="tx-name">${t.cat||'מעשר'}${t.desc?` <span style="color:var(--ink4);font-weight:400">— ${t.desc}</span>`:''}</div>
@@ -1132,40 +968,84 @@ function renderTitheList(){
 }
 
 // ═══ FILTER ═══
-function filterTx(f,btn){ txFilter=f; document.querySelectorAll('.f-chip').forEach(c=>c.classList.remove('active')); btn.classList.add('active'); renderTxList(); }
+function filterTx(f,btn){
+  txFilter=f;
+  document.querySelectorAll('.f-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  renderTxList();
+}
 function searchTx(q){ txSearch=q; renderTxList(); }
 
 // ═══ AI ═══
+function saveApiKey(){
+  const k = document.getElementById('api-key-input').value.trim();
+  if(!k){ toast('הזן מפתח API'); return; }
+  localStorage.setItem('_apikey', k);
+  toast('מפתח נשמר');
+}
+
 async function askAI(q){ document.getElementById('ai-input').value=q; await sendAI(); }
+
 async function sendAI(){
-  const inp=document.getElementById('ai-input');
-  const q=inp.value.trim(); if(!q) return;
+  const inp = document.getElementById('ai-input');
+  const q   = inp.value.trim();
+  if(!q) return;
+
+  const apiKey = localStorage.getItem('_apikey') || document.getElementById('api-key-input').value.trim();
+  if(!apiKey){
+    toast('הזן מפתח Anthropic API תחילה');
+    return;
+  }
+
   inp.value='';
   const chat=document.getElementById('ai-chat');
   chat.innerHTML+=`<div class="ai-msg user">${q}</div>`;
-  const ld=document.createElement('div'); ld.className='ai-msg bot thinking'; ld.textContent='מעבד...'; chat.appendChild(ld);
+  const ld=document.createElement('div');
+  ld.className='ai-msg bot thinking';
+  ld.textContent='מעבד...';
+  chat.appendChild(ld);
   chat.scrollTop=chat.scrollHeight;
 
-  const inc=sum('income'), exp=sum('expense'), titheC=inc*.1, titheP=sum('tithe');
-  const oweT=S.debts.filter(d=>!d.settled&&d.dir==='owe').reduce((s,d)=>s+d.amt,0);
-  const owedT=S.debts.filter(d=>!d.settled&&d.dir==='owed').reduce((s,d)=>s+d.amt,0);
-  const txSample=S.txs.filter(t=>t.type!=='tithe_p').slice(-20).map(t=>`${t.date} ${t.type} ${t.cat||''} ₪${t.amt} ${t.desc||''}`).join('\n');
-  const debtSample=S.debts.filter(d=>!d.settled).map(d=>`${d.dir==='owe'?'חייב ל':'חייב לי'}: ${d.person} ₪${d.amt}`).join('\n');
+  const inc      = sum('income');
+  const exp      = sum('expense');
+  const titheC   = inc*.1;
+  const titheP   = sum('tithe');
+  const oweT     = S.debts.filter(d=>!d.settled&&d.dir==='owe').reduce((s,d)=>s+d.amt,0);
+  const owedT    = S.debts.filter(d=>!d.settled&&d.dir==='owed').reduce((s,d)=>s+d.amt,0);
+  const txSample = S.txs.filter(t=>t.type!=='tithe_p').slice(-20).map(t=>`${t.date} ${t.type} ${t.cat||''} ₪${t.amt} ${t.desc||''}`).join('\n');
+  const debtSample = S.debts.filter(d=>!d.settled).map(d=>`${d.dir==='owe'?'חייב ל':'חייב לי'}: ${d.person} ₪${d.amt}`).join('\n');
 
   const sys=`אתה יועץ פיננסי אישי בעברית. ענה בצורה מקצועית, ישירה וברורה ללא אימוג'י.
-נתוני המשתמש: יתרה ₪${S.balance.toFixed(2)} | הכנסות ₪${inc.toFixed(2)} | הוצאות ₪${exp.toFixed(2)} | מעשרות שנצברו ₪${titheC.toFixed(2)} | שולם ₪${titheP.toFixed(2)} | חובות שאני חייב ₪${oweT.toFixed(2)} | חייבים לי ₪${owedT.toFixed(2)}
-תנועות:\n${txSample||'אין'}
-חובות:\n${debtSample||'אין'}`;
+נתוני המשתמש: יתרה ₪${S.balance.toFixed(2)} | הכנסות ₪${inc.toFixed(2)} | הוצאות ₪${exp.toFixed(2)} | מעשרות שנצברו ₪${titheC.toFixed(2)} | שולם ₪${titheP.toFixed(2)} | נותר למעשרות ₪${Math.max(0,titheC-titheP).toFixed(2)} | חובות שאני חייב ₪${oweT.toFixed(2)} | חייבים לי ₪${owedT.toFixed(2)}
+תנועות אחרונות:\n${txSample||'אין'}
+חובות פעילים:\n${debtSample||'אין'}`;
 
   try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({ model:'claude-sonnet-4-20250514', max_tokens:1000, system:sys, messages:[{role:'user',content:q}] })
+    const res = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system: sys,
+        messages:[{role:'user', content:q}]
+      })
     });
-    const data=await res.json();
+    const data = await res.json();
     ld.remove();
-    chat.innerHTML+=`<div class="ai-msg bot">${(data.content?.[0]?.text||'שגיאה').replace(/\n/g,'<br>')}</div>`;
-  }catch(e){ ld.textContent='שגיאת חיבור. נסה שוב.'; }
+    if(data.error){
+      chat.innerHTML+=`<div class="ai-msg bot thinking">שגיאה: ${data.error.message}</div>`;
+    } else {
+      chat.innerHTML+=`<div class="ai-msg bot">${(data.content?.[0]?.text||'שגיאה').replace(/\n/g,'<br>')}</div>`;
+    }
+  } catch(e){
+    ld.textContent='שגיאת חיבור. בדוק את המפתח ונסה שוב.';
+  }
   chat.scrollTop=chat.scrollHeight;
 }
 
